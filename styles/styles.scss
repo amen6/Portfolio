@@ -1,0 +1,51 @@
+*,*::after,*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// colors
+
+$charcoal: #30475E;
+$gunmetal: #222831;
+$cultured: #EEEEEE;
+$raspberry: #E31B6D;
+
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+body {
+    background: url(../images/filler.png) center center;
+    color: #DDDDDD;
+    font-family: "Open Sans";
+    text-align: center;
+    padding-inline: 100px;
+    padding-top: 50px;
+}
+
+
+
+.title {
+    margin: 0;
+    font-weight: 300;
+    font-size: 50px;
+    margin-bottom: 50px + 25px;
+    letter-spacing: 1px;
+    span {
+        position: relative;
+        top: 30px;
+        font-size: 30px;
+        color: $raspberry;
+    }
+}
+
+.main {
+    height: 100%;
+    line-height: 35px;
+    font-size: 25px;
+    text-align: center;
+}
