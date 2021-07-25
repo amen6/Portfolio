@@ -20,11 +20,11 @@ $raspberry: #E31B6D;
 
 body {
     background: url(../images/filler.png) center center;
-    color: #DDDDDD;
+    color: $cultured;
     font-family: "Open Sans";
     text-align: center;
-    padding-inline: 100px;
-    padding-top: 50px;
+    padding-inline: 0px;
+    padding-top: 15px;
 }
 
 
@@ -33,12 +33,13 @@ body {
     margin: 0;
     font-weight: 300;
     font-size: 50px;
-    margin-bottom: 50px + 25px;
+    margin-bottom: 60px;
     letter-spacing: 1px;
     span {
         position: relative;
         top: 30px;
-        font-size: 30px;
+        font-size: 35px;
+        text-transform: uppercase;
         color: $raspberry;
     }
 }
@@ -48,4 +49,53 @@ body {
     line-height: 35px;
     font-size: 25px;
     text-align: center;
+    > * {
+        width: 65%;
+        margin-inline: auto;
+    }
+    .description {
+        margin-bottom: 25px;
+    }
+    .pp-container {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+}
+
+.socials {
+    font-size: 1.5rem;
+    margin-block: 20px 10px;
+    a {
+        color: $cultured;
+    }
+}
+
+.footer {
+    border-top: 1px solid $cultured;
+    width: 55%;
+    padding-top: 20px;
+    margin-inline: auto;
+    ul {
+        @include flexCenter(row);
+        justify-content: space-around;
+        list-style: none;
+        text-transform: uppercase;
+        a {
+            color: $cultured;
+            text-decoration: underline;
+            text-decoration-color: transparent;
+            transition: text-decoration-color .3s ease-in-out;
+            &:hover {
+                text-decoration-color: $cultured;
+            }
+        }
+    }
 }
