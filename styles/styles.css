@@ -5,6 +5,54 @@
           box-sizing: border-box;
 }
 
+.col-1-in-12 {
+  width: 8.33333%;
+}
+
+.col-2-in-12 {
+  width: 16.66667%;
+}
+
+.col-3-in-12 {
+  width: 25%;
+}
+
+.col-4-in-12 {
+  width: 33.33333%;
+}
+
+.col-5-in-12 {
+  width: 41.66667%;
+}
+
+.col-6-in-12 {
+  width: 50%;
+}
+
+.col-7-in-12 {
+  width: 58.33333%;
+}
+
+.col-8-in-12 {
+  width: 66.66667%;
+}
+
+.col-9-in-12 {
+  width: 75%;
+}
+
+.col-10-in-12 {
+  width: 83.33333%;
+}
+
+.col-11-in-12 {
+  width: 91.66667%;
+}
+
+.col-12-in-12 {
+  width: 100%;
+}
+
 body {
   background: url(../images/filler.png) center center;
   color: #EEEEEE;
@@ -26,7 +74,6 @@ body {
   position: relative;
   top: 30px;
   font-size: 35px;
-  text-transform: uppercase;
   color: #E31B6D;
 }
 
@@ -111,5 +158,130 @@ body {
 .footer ul a:hover {
   -webkit-text-decoration-color: #EEEEEE;
           text-decoration-color: #EEEEEE;
+}
+
+.blogs-main, .projects-main {
+  max-width: 1000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 20px;
+  margin-inline: auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.blogs-main > *, .projects-main > * {
+  padding-inline: 15px;
+  margin-bottom: 10px;
+}
+
+.blogs-main .blog, .blogs-main .project, .projects-main .blog, .projects-main .project {
+  position: relative;
+  max-height: 250px;
+  overflow: hidden;
+}
+
+.blogs-main .blog .img-caption, .blogs-main .project .img-caption, .projects-main .blog .img-caption, .projects-main .project .img-caption {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+.blogs-main .blog .img-caption:hover, .blogs-main .project .img-caption:hover, .projects-main .blog .img-caption:hover, .projects-main .project .img-caption:hover {
+  opacity: 1;
+}
+
+.blogs-main .blog .img-caption h3, .blogs-main .project .img-caption h3, .projects-main .blog .img-caption h3, .projects-main .project .img-caption h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-block: 25px 15px;
+  color: #E31B6D;
+}
+
+.blogs-main .blog .img-caption a, .blogs-main .project .img-caption a, .projects-main .blog .img-caption a, .projects-main .project .img-caption a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 15px 20px;
+  color: #fff;
+  background: #E31B6D;
+  border-radius: 4px;
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-inline: auto;
+}
+
+.blogs-main .blog .img-caption a i, .blogs-main .project .img-caption a i, .projects-main .blog .img-caption a i, .projects-main .project .img-caption a i {
+  font-size: 25px;
+  padding-left: 10px;
+}
+
+.blogs-main .blog img, .blogs-main .project img, .projects-main .blog img, .projects-main .project img {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+}
+
+@media (max-width: 1024px) {
+  .blogs-main, .projects-main {
+    max-width: 700px;
+  }
+  .col-6-in-12--med {
+    width: 50%;
+  }
+}
+
+@media (max-width: 710px) {
+  .blogs-main, .projects-main {
+    max-width: 580px;
+  }
+}
+
+@media (max-width: 586px) {
+  .blog-container, .project-container {
+    width: 100%;
+  }
+  .blog-container .img-caption, .project-container .img-caption {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .blog-container .img-caption h3, .project-container .img-caption h3 {
+    padding-inline: 5px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

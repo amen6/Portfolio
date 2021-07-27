@@ -18,6 +18,28 @@ $raspberry: #E31B6D;
     flex-direction: $direction;
 }
 
+$widthColumns: (
+    1:1,
+    2:2,
+    3:3,
+    4:4,
+    5:5,
+    6:6,
+    7:7,
+    8:8,
+    9:9,
+    10:10,
+    11:11,
+    12:12
+);
+
+@each $number, $value in $widthColumns {
+    .col-#{$number}-in-12 {
+        width: (100% * ($value/12));
+    }
+}
+
+
 body {
     background: url(../images/filler.png) center center;
     color: $cultured;
@@ -39,7 +61,6 @@ body {
         position: relative;
         top: 30px;
         font-size: 35px;
-        text-transform: uppercase;
         color: $raspberry;
     }
 }
@@ -95,6 +116,92 @@ body {
             transition: text-decoration-color .3s ease-in-out;
             &:hover {
                 text-decoration-color: $cultured;
+            }
+        }
+    }
+}
+
+.blogs-main, .projects-main {
+    max-width: 1000px;
+    @include flexCenter(row);
+    margin-bottom: 20px;
+    margin-inline: auto;
+    flex-wrap: wrap;
+    > * {
+        padding-inline: 15px;
+        margin-bottom: 10px;
+    }
+    .blog, .project {
+        position: relative;
+        max-height: 250px;
+        overflow: hidden;
+        .img-caption {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            width: 100%;
+            height: 100%;
+            transition: opacity 1s ease-in-out;
+            &:hover {
+                opacity: 1;
+            }
+            h3 {
+                font-size: 18px;
+                font-weight: 400;
+                margin-block: 25px 15px;
+                color: $raspberry;
+            }
+            a {
+                display: inline-block;
+                text-decoration: none;
+                padding: 15px 20px;
+                color: #fff;
+                background: $raspberry;
+                border-radius: 4px;
+                width: 70%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-inline: auto;
+                i {
+                    font-size: 25px;
+                    padding-left: 10px;
+                }
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            min-height: 250px;
+        }
+    }
+}
+
+@media (max-width:1024px) {
+    .blogs-main, .projects-main {
+        max-width: 700px;
+    } 
+    .col-6-in-12--med {
+        width: 50%;
+    }
+}
+
+@media (max-width:710px) {
+    .blogs-main, .projects-main {
+        max-width: 580px;
+    } 
+}
+
+@media (max-width:586px) {
+    .blog-container, .project-container {
+        width: 100%;
+        .img-caption {
+            @include flexCenter(column);
+            h3 {
+                padding-inline: 5px;
             }
         }
     }
